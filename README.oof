@@ -1,0 +1,10 @@
+ultim versao do INOCAR:
+oof_src_20140415_104315.tar.gz
+
+versao melhorada do IEO:
+oof_src_20150502_004313.tar.gz
+-foram alterados oof.conf e oof.py adicionando as opções
+1) #BIO#
+2) #BIO_IN#
+3) folder inputs/bio
+
