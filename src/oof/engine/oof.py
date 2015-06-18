@@ -157,7 +157,7 @@ def check_atm(date,FA,wait=3600,cf=CONF):
 
 def check_bc(date,FA,wait=3600,cf=CONF):
   print 'checking parent model...'
-  import get_hycom
+  import get_mercator as get_hycom
   nforec=opt.n_pred(cf)
   date1=None
   if FA=='f': date1=dateu.parse_date(dateu.next_date(date,nforec))
@@ -296,7 +296,7 @@ def gen_clmbry(date,FA='a',nest=0,cf=CONF,quiet=True):
     isFatal=False
   else:
     nforec=opt.n_pred(cf)
-    import get_hycom
+    import get_mercator as get_hycom
     # no need to check if data is ready! if not gen_clm_bry will return error!
     # anyway, cannot know if hycom data of today is analtsis or forecast!!
 
@@ -346,7 +346,9 @@ def gen_in(date,FA='a',nest=0,cf=CONF):
          'sta_in': relativepath(RUN, opt.nameof('in', 'sta',**kargs)),
          'sta':    relativepath(RUN, opt.nameof('out','sta',**kargs)),
          'title':  opt.atts_info(cf)['title'],
-         'appcpp': opt.atts_info(cf)['appcpp']
+         'appcpp': opt.atts_info(cf)['appcpp'],
+         'bio_in': relativepath(RUN, opt.nameof('in', 'bio',**kargs)),
+         'dia':    relativepath(RUN, opt.nameof('out','dia',**kargs))
          }
 
       d['dstart']= '%d' % dateu.date_diff(date,'1970-01-01').days  # days since 19700101

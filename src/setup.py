@@ -83,6 +83,13 @@ def start(quiet=0,**kargs):
   runLnkA=ot.nameof_run(cf,FA='a')
   runLnkF=ot.nameof_run(cf,FA='f')
 
+  runLnkA_path=runLnkA[0]
+  runLnkF_path=runLnkF[0]
+  runLnkA_file=runLnkA[-1].split()[-1]
+  runLnkF_file=runLnkF[-1].split()[-1]
+  runLnkA=os.path.join(runLnkA_path,runLnkA_file)
+  runLnkF=os.path.join(runLnkF_path,runLnkF_file)
+
   print ':: linking run file: %s' % runLnkA
   if os.path.isfile(runLnkA):  print '  already exists'
   else: os.symlink(runFileA,runLnkA)

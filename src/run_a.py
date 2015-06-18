@@ -1,5 +1,4 @@
-#!/usr/bin/python2.6 -u
-
+#!/usr/bin/python -u
 import sys
 from os.path import join
 
